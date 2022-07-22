@@ -236,7 +236,7 @@ open class DialogOptions() : Parcelable {
     /**
      * dataBinding绑定
      */
-    var bindingListener: ((container: ViewGroup?, dialog: AppDialog) -> View)? = null
+    var bindingListener: ((inflater: LayoutInflater,container: ViewGroup?, dialog: AppDialog) -> View)? = null
 
     /**
      * dataBinding事件监听

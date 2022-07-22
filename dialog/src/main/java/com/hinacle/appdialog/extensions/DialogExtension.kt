@@ -52,7 +52,10 @@ inline fun DialogOptions.convertListenerFun(crossinline listener: (holder: ViewH
 /**
  * 设置dataListener的扩展方法
  */
-inline fun< VB : ViewDataBinding> DialogOptions.dataConvertListenerFun(bindingClass: KClass<VB>, crossinline listener: (dialogBinding: VB, dialog: AppDialog) -> Unit) {
+inline fun <VB : ViewDataBinding> DialogOptions.dataConvertListenerFun(
+    bindingClass: KClass<VB>,
+    crossinline listener: (dialogBinding: VB, dialog: AppDialog) -> Unit
+) {
     val dataBindingConvertListener = object : DataConvertListener() {
         override fun convertView(dialogBinding: Any, dialog: AppDialog) {
             listener.invoke(dialogBinding as VB, dialog)
@@ -64,10 +67,18 @@ inline fun< VB : ViewDataBinding> DialogOptions.dataConvertListenerFun(bindingCl
 /**
  * 设置dataBindingListener的扩展方法
  */
-inline fun <T : Any, VB : ViewDataBinding> DialogOptions.bindingListenerFun(inflater: LayoutInflater, data: T,
-                                                                            bindingClass: KClass<VB>, crossinline listener: (dialogBinding: VB, dialog: AppDialog) -> Unit) {
-    val newBindingListener = { container: ViewGroup?, dialog: AppDialog ->
-        val binding = DataBindingUtil.inflate<ViewDataBinding>(inflater, layoutId, container, false) as VB
+inline fun <T : Any, VB : ViewDataBinding> DialogOptions.bindingListenerFun(
+    data: T, bindingClass: KClass<VB>, crossinline listener: (dialogBinding: VB, dialog: AppDialog) -> Unit
+) {
+    val newBindingListener = {inflater:LayoutInflater, container: ViewGroup?, dialog: AppDialog ->
+
+
+
+        val binding = DataBindingUtil.inflate<ViewDataBinding>(
+            inflater,
+            layoutId,
+            container,
+            false) as VB
         binding.setVariable(BR.data, data)
         binding.lifecycleOwner = dialog
         listener.invoke(binding, dialog)
@@ -81,7 +92,10 @@ inline fun <T : Any, VB : ViewDataBinding> DialogOptions.bindingListenerFun(infl
 /**
  * 添加DialogShowOrDismissListener的扩展方法
  */
-inline fun DialogOptions.addShowDismissListener(key: String, dialogInterface: DialogShowOrDismissListener.() -> Unit): DialogOptions {
+inline fun DialogOptions.addShowDismissListener(
+    key: String,
+    dialogInterface: DialogShowOrDismissListener.() -> Unit
+): DialogOptions {
     val dialogShowOrDismissListener = DialogShowOrDismissListener()
     dialogShowOrDismissListener.dialogInterface()
     showDismissMap[key] = dialogShowOrDismissListener

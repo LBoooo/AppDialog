@@ -190,7 +190,7 @@ open class AppDialog : DialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         //加载布局
         if (dialogOptions.bindingListener != null) {
-            rootView = dialogOptions.bindingListener!!.invoke(container, this)
+            rootView = dialogOptions.bindingListener!!.invoke(inflater,  container, this)
             return rootView
         }
         rootView = inflater.inflate(dialogOptions.layoutId, container, false)
