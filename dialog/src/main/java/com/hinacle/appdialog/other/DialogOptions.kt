@@ -1,4 +1,4 @@
-package dialog.hinacle.appdialog.other
+package com.hinacle.appdialog.other
 
 import android.animation.Animator
 import android.graphics.Color
@@ -11,13 +11,13 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.annotation.StyleRes
 import androidx.fragment.app.DialogFragment
-import dialog.hinacle.appdialog.AppDialog
-import com.ly.appdialog.R
-import dialog.hinacle.appdialog.extensions.UtilsExtension.Companion.unDisplayViewSize
-import dialog.hinacle.appdialog.listener.DataConvertListener
-import dialog.hinacle.appdialog.listener.DialogShowOrDismissListener
-import dialog.hinacle.appdialog.listener.OnKeyListener
-import dialog.hinacle.appdialog.listener.ViewConvertListener
+import com.hinacle.appdialog.AppDialog
+import com.hinacle.appdialog.R
+import com.hinacle.appdialog.extensions.UtilsExtension.Companion.unDisplayViewSize
+import com.hinacle.appdialog.listener.DataConvertListener
+import com.hinacle.appdialog.listener.DialogShowOrDismissListener
+import com.hinacle.appdialog.listener.OnKeyListener
+import com.hinacle.appdialog.listener.ViewConvertListener
 
 open class DialogOptions() : Parcelable {
 

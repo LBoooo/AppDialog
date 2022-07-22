@@ -1,4 +1,4 @@
-package dialog.hinacle.appdialog.extensions
+package com.hinacle.appdialog.extensions
 
 import android.animation.Animator
 

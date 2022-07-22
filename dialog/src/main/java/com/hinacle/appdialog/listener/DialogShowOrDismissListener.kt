@@ -1,4 +1,4 @@
-package dialog.hinacle.appdialog.listener
+package com.hinacle.appdialog.listener
 
 import android.os.Parcel
 import android.os.Parcelable

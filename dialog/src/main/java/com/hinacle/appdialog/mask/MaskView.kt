@@ -1,10 +1,10 @@
-package dialog.hinacle.appdialog.mask
+package com.hinacle.appdialog.mask
 
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
-import com.ly.appdialog.R
+import com.hinacle.appdialog.R
 
 
 class MaskView : View {

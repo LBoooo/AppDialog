@@ -1,4 +1,4 @@
-package dialog.hinacle.appdialog.other
+package com.hinacle.appdialog.other
 
 import androidx.annotation.IdRes
 import android.util.SparseArray

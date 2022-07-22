@@ -1,9 +1,8 @@
-package dialog.hinacle.appdialog.listener
+package com.hinacle.appdialog.listener
 
 import android.os.Parcel
 import android.os.Parcelable
-import dialog.hinacle.appdialog.AppDialog
-import dialog.hinacle.appdialog.other.ViewHolder
+import com.hinacle.appdialog.AppDialog
 
 abstract class DataConvertListener : Parcelable {
 

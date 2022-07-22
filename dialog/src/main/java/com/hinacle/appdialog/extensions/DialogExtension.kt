@@ -1,4 +1,4 @@
-package dialog.hinacle.appdialog.extensions
+package com.hinacle.appdialog.extensions
 
 import android.content.DialogInterface
 import android.view.KeyEvent
@@ -6,14 +6,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import dialog.ly.appdialog.BR
-import dialog.hinacle.appdialog.AppDialog
-import dialog.hinacle.appdialog.listener.DataConvertListener
-import dialog.hinacle.appdialog.listener.DialogShowOrDismissListener
-import dialog.hinacle.appdialog.listener.OnKeyListener
-import dialog.hinacle.appdialog.listener.ViewConvertListener
-import dialog.hinacle.appdialog.other.DialogOptions
-import dialog.hinacle.appdialog.other.ViewHolder
+import com.hinacle.appdialog.BR
+import com.hinacle.appdialog.AppDialog
+import com.hinacle.appdialog.listener.DataConvertListener
+import com.hinacle.appdialog.listener.DialogShowOrDismissListener
+import com.hinacle.appdialog.listener.OnKeyListener
+import com.hinacle.appdialog.listener.ViewConvertListener
+import com.hinacle.appdialog.other.DialogOptions
+import com.hinacle.appdialog.other.ViewHolder
 import kotlin.reflect.KClass
 
 /**
@@ -68,7 +68,7 @@ inline fun <T : Any, VB : ViewDataBinding> DialogOptions.bindingListenerFun(infl
                                                                             bindingClass: KClass<VB>, crossinline listener: (dialogBinding: VB, dialog: AppDialog) -> Unit) {
     val newBindingListener = { container: ViewGroup?, dialog: AppDialog ->
         val binding = DataBindingUtil.inflate<ViewDataBinding>(inflater, layoutId, container, false) as VB
-        binding.setVariable(dialog.ly.appdialog.BR.data, data)
+        binding.setVariable(BR.data, data)
         binding.lifecycleOwner = dialog
         listener.invoke(binding, dialog)
         dialog.dialogBinding = binding

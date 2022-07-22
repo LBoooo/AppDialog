@@ -1,4 +1,4 @@
-package dialog.hinacle.appdialog
+package com.hinacle.appdialog
 
 import android.app.Dialog
 import android.content.Context
@@ -10,15 +10,15 @@ import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
-import dialog.hinacle.appdialog.extensions.AnimatorListenerEx
-import dialog.hinacle.appdialog.extensions.UtilsExtension.Companion.getScreenHeight
-import dialog.hinacle.appdialog.extensions.UtilsExtension.Companion.getScreenHeightOverStatusBar
-import dialog.hinacle.appdialog.extensions.UtilsExtension.Companion.getScreenWidth
-import dialog.hinacle.appdialog.listener.OnKeyListener
-import dialog.hinacle.appdialog.other.DialogGravity
-import dialog.hinacle.appdialog.other.DialogInitMode
-import dialog.hinacle.appdialog.other.DialogOptions
-import dialog.hinacle.appdialog.other.ViewHolder
+import com.hinacle.appdialog.extensions.AnimatorListenerEx
+import com.hinacle.appdialog.extensions.UtilsExtension.Companion.getScreenHeight
+import com.hinacle.appdialog.extensions.UtilsExtension.Companion.getScreenHeightOverStatusBar
+import com.hinacle.appdialog.extensions.UtilsExtension.Companion.getScreenWidth
+import com.hinacle.appdialog.listener.OnKeyListener
+import com.hinacle.appdialog.other.DialogGravity
+import com.hinacle.appdialog.other.DialogInitMode
+import com.hinacle.appdialog.other.DialogOptions
+import com.hinacle.appdialog.other.ViewHolder
 import java.lang.reflect.Field
 import java.util.concurrent.atomic.AtomicBoolean
 

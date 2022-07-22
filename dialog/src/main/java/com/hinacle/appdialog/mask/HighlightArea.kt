@@ -1,4 +1,4 @@
-package dialog.hinacle.appdialog.mask
+package com.hinacle.appdialog.mask
 
 import android.graphics.RectF
 

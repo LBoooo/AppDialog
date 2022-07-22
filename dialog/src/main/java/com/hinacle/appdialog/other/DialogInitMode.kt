@@ -1,4 +1,4 @@
-package dialog.hinacle.appdialog.other
+package com.hinacle.appdialog.other
 
 enum class DialogInitMode {
     NORMAL,//普通模式，在onCreateView()方法中加载convertView()方法
