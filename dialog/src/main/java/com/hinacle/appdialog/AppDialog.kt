@@ -28,7 +28,6 @@ open class AppDialog : DialogFragment() {
     /*根布局*/
     var rootView: View? = null
 
-
     var dialogBinding: Any? = null
 
     /*绑定的activity*/
@@ -51,7 +50,6 @@ open class AppDialog : DialogFragment() {
     override fun onDetach() {
         super.onDetach()
         dialogActivity = null
-
     }
 
     override fun onCancel(dialog: DialogInterface) {
@@ -84,7 +82,6 @@ open class AppDialog : DialogFragment() {
             isShownByMe = this.javaClass.superclass.getDeclaredField("mShownByMe")
             isDismissed?.isAccessible = true
             isShownByMe?.isAccessible = true
-            
         }
     }
 
@@ -182,7 +179,6 @@ open class AppDialog : DialogFragment() {
             }
         }
     }
-
 
     /**
      * 执行顺序：4
@@ -299,6 +295,7 @@ open class AppDialog : DialogFragment() {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (dialogOptions.unLeak) {
@@ -314,7 +311,6 @@ open class AppDialog : DialogFragment() {
      */
     override fun onStop() {
         super.onStop()
-
         if (isDismissed == null) {
             myIsShow = false
         }
@@ -340,7 +336,7 @@ open class AppDialog : DialogFragment() {
     }
 
     /**
-     * 执行dimiss时候的监听操作
+     * 执行dismiss时候的监听操作
      */
     private fun executeDismissListener() {
         for (entry in dialogOptions.showDismissMap.entries) {
@@ -474,7 +470,6 @@ open class AppDialog : DialogFragment() {
         //设置按键拦截事件，一般在全屏显示需要重写返回键时用到
         setOnKeyListener()
     }
-
 
     /**
      * 重写按钮监听
@@ -698,7 +693,6 @@ open class AppDialog : DialogFragment() {
         return this
     }
 
-
     /**
      * @param manager
      * @param gravity dialog相对于屏幕的位置(默认为上一次设置的位置)
@@ -920,5 +914,4 @@ open class AppDialog : DialogFragment() {
         }
         return this
     }
-
 }

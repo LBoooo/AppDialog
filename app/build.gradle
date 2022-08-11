@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.hinacle.appdialog'
+    namespace 'com.hinacle.app'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.hinacle.appdialog"
+        applicationId "com.hinacle.app"
         minSdk 23
         targetSdk 32
         versionCode 1
@@ -29,6 +29,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
     }
 }
 

@@ -71,15 +71,23 @@ inline fun <T : Any, VB : ViewDataBinding> DialogOptions.bindingListenerFun(
     data: T, bindingClass: KClass<VB>, crossinline listener: (dialogBinding: VB, dialog: AppDialog) -> Unit
 ) {
     val newBindingListener = {inflater:LayoutInflater, container: ViewGroup?, dialog: AppDialog ->
-
-
-
-        val binding = DataBindingUtil.inflate<ViewDataBinding>(
-            inflater,
-            layoutId,
-            container,
-            false) as VB
+        val binding = DataBindingUtil.inflate<ViewDataBinding>(inflater, layoutId, container, false) as VB
         binding.setVariable(BR.data, data)
+        binding.lifecycleOwner = dialog
+        listener.invoke(binding, dialog)
+        dialog.dialogBinding = binding
+        binding.root
+    }
+    bindingListener = newBindingListener
+}
+
+/**
+ * 设置dataBindingListener的扩展方法 不设置data
+ */
+inline fun <VB :ViewDataBinding> DialogOptions.bindingListenerFun(
+    bindingClass: KClass<VB>, crossinline listener: (dialogBinding: VB, dialog: AppDialog) -> Unit){
+    val newBindingListener = {inflater:LayoutInflater, container: ViewGroup?, dialog: AppDialog ->
+        val binding = DataBindingUtil.inflate<ViewDataBinding>(inflater, layoutId, container, false) as VB
         binding.lifecycleOwner = dialog
         listener.invoke(binding, dialog)
         dialog.dialogBinding = binding

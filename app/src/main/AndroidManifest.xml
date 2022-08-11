@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDialog"
         tools:targetApi="31" >
-        <activity android:name="dialog.hinacle.appdialog.AppActivity"
+        <activity android:name="dialog.hinacle.app.AppActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
