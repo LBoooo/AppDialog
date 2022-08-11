@@ -20,3 +20,5 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 #-keep public class com.hinacle.appdialog.AppDialog { *; }
+
+#-keep public class com.hinacle.appdialog.AppDialog { *; }

@@ -16,7 +16,7 @@ class AppActivity : AppCompatActivity() {
         newAppDialog {
             layoutId = R.layout.layout_test
             unLeak = true
-            bindingListenerFun("", LayoutTestBinding::class){
+            bindingListenerFun(  LayoutTestBinding::class){
                 dialogBinding, dialog ->
 
             }
